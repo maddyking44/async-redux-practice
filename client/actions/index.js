@@ -37,3 +37,18 @@ export function fetchPosts (subreddit) {
       })
   }
 }
+
+
+export function fetchSloths (subreddit) {
+  return (dispatch) => {
+    dispatch(requestPosts())
+    return request
+      .get(`/api/v1/reddit/subreddit/${subreddit}`)
+      .then (res => {
+        dispatch(receivePosts(res.body))
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}

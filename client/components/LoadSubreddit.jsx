@@ -1,11 +1,16 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchPosts} from '../actions'
+import {fetchPosts, fetchSloths} from '../actions'
 
-const LoadSubreddit = ({dispatch}) => (
+const LoadSubreddit = ({dispatch}) => {
+  return ( <div>
   <button onClick={() => dispatch(fetchPosts('newzealand'))}>
-    Fetch Posts
+    Fetch New Zealand
   </button>
-)
+  <button onClick={() => dispatch(fetchSloths('sloths'))}>
+    Fetch Sloths
+  </button>
+  </div>
+  )}
 
 export default connect()(LoadSubreddit)
