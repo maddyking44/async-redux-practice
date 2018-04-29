@@ -1,9 +1,17 @@
 import React from 'react'
+import {HashRouter as Router, Route} from 'react-router-dom'
+import Form from './Form'
+import PuffPage from './PuffPage'
 
-// This might need to be turned into a stateful (class-based) component
+
 const App = () => (
   <div className='app'>
-    Ready to rock and roll
+    <Router>
+      <div>
+      <Route exact path='/' component={PuffPage}/>
+      <Route exact path='/form' component={Form}/>
+      </div>
+    </Router>
   </div>
 )
 

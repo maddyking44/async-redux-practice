@@ -1,7 +1,8 @@
 import {combineReducers} from 'redux'
-
-// import otherReducer from './other-reducer'
+// import formReducer from './formReducer'
+import homeReducer from './homeReducer'
 
 export default combineReducers({
-  // otherReducer
+  // formReducer,
+  homeReducer  
 })
